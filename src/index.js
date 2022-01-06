@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import configeStore from './store/configureStore';
 import { firebase } from './firebase/firebase';
 import { login, logout } from './actions/auth';
+import { startSetTodoList } from './actions/todoList';
 
 const store = configeStore();
 
@@ -40,12 +41,12 @@ firebase.auth().onAuthStateChanged((user) => {
   if (user) {
       store.dispatch(login(user.uid));
       //console.log('uid', user.uid);
-      //store.dispatch(startSetExpenses()).then(() => {
+      store.dispatch(startSetTodoList()).then(() => {
           renderApp();
           if (history.location.pathname === '/') {
               history.push('/home');
           }
-      //});
+      });
   } else {
       store.dispatch(logout());
       renderApp();

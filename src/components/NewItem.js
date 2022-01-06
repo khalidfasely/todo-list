@@ -1,8 +1,11 @@
 import { useState } from 'react';
+import { connect } from 'react-redux';
+import moment from 'moment';
+import { startAddTodoItem } from '../actions/todoList';
 
-const NewItem = () => {
+const NewItem = ({ startAddTodoItem }) => {
     const [ newItem, setNewItem ] = useState('');
-    const [ todoList, setTodoList ] = useState([]);
+    //const [ todoList, setTodoList ] = useState([]);
 
     const onNewItemChange = (e) => {
         setNewItem(e.target.value);
@@ -10,17 +13,23 @@ const NewItem = () => {
 
     const onAddItemToList = (e) => {
         e.preventDefault();
-        setTodoList([newItem, ...todoList]);
+        const newTodoItem = {
+            content: newItem,
+            active: true,
+            time: moment().format(),
+            timeOfDeactive: undefined
+        };
+        startAddTodoItem(newTodoItem);
         setNewItem('');
     };
 
-    const onRemoveItem = (index) => {
-        setTodoList([...todoList.filter((item, indexL) => index !== indexL)]);
-    };
+    //const onRemoveItem = (index) => {
+    //    setTodoList([...todoList.filter((item, indexL) => index !== indexL)]);
+    //};
 
-    const onDeactiveItem = (index) => {
-        console.log(`Item number ${index} is done.`);
-    };
+    //const onDeactiveItem = (index) => {
+    //    console.log(`Item number ${index} is done.`);
+    //};
 
     return (
         <div>
@@ -32,20 +41,12 @@ const NewItem = () => {
                     onChange={onNewItemChange}
                 />
             </form>
-            {
-                todoList.length !== 0 ?
-                todoList.map((item, index) => (
-                    <div key={index}>
-                        <p>{item}</p>
-                        <button onClick={() => onDeactiveItem(index)}>Done</button>
-                        <i>Already done.</i>
-                        <button onClick={() => onRemoveItem(index)}>X</button>
-                    </div>
-                )) :
-                <div>Nothing Todo</div>
-            }
         </div>
     );
 };
 
-export default NewItem;
+const mapDispatchToProps = (dispatch) => ({
+    startAddTodoItem: (newTodoItem) => dispatch(startAddTodoItem(newTodoItem))
+});
+
+export default connect(undefined, mapDispatchToProps)(NewItem);
