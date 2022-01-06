@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import moment from 'moment';
 import { startAddTodoItem } from '../actions/todoList';
 
-const NewItem = ({ startAddTodoItem }) => {
+export const NewItem = ({ startAddTodoItem }) => {
     const [ newItem, setNewItem ] = useState('');
+    const [ error, setError ] = useState('');
     //const [ todoList, setTodoList ] = useState([]);
 
     const onNewItemChange = (e) => {
@@ -12,6 +13,7 @@ const NewItem = ({ startAddTodoItem }) => {
     };
 
     const onAddItemToList = (e) => {
+        setError('');
         e.preventDefault();
         const newTodoItem = {
             content: newItem,
@@ -19,8 +21,12 @@ const NewItem = ({ startAddTodoItem }) => {
             time: moment().format(),
             timeOfDeactive: undefined
         };
-        startAddTodoItem(newTodoItem);
-        setNewItem('');
+        if(newItem) {
+            startAddTodoItem(newTodoItem);
+            setNewItem('');
+        } else {
+            setError('Should fill the input!');
+        };
     };
 
     //const onRemoveItem = (index) => {
@@ -33,8 +39,10 @@ const NewItem = ({ startAddTodoItem }) => {
 
     return (
         <div>
-            <form onSubmit={onAddItemToList}>
+            <form data-testid='form' onSubmit={onAddItemToList}>
+                {error && <p>{error}</p>}
                 <input
+                    data-testid='input'
                     placeholder="Add Something To do later!"
                     type='text'
                     value={newItem}

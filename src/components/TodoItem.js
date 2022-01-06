@@ -2,7 +2,15 @@ import moment from "moment"
 import { connect } from "react-redux";
 import { startDeactiveTodoItem, startRemoveTodoItem } from "../actions/todoList";
 
-const TodoItem = ({ id , content, time, active, timeOfDeactive, startDeactiveTodoItem, startRemoveTodoItem }) => {
+export const TodoItem = ({
+        id,
+        content,
+        time,
+        active,
+        timeOfDeactive,
+        startDeactiveTodoItem,
+        startRemoveTodoItem
+    }) => {
     
     const onDeactiveTodoItem = () => {
         startDeactiveTodoItem(id);
@@ -14,16 +22,16 @@ const TodoItem = ({ id , content, time, active, timeOfDeactive, startDeactiveTod
 
     return (
         <div>
-            {content}
+            <div>{content}</div>
             <div>{moment(time).fromNow()}</div>
             {
                 active ?
-                <button onClick={onDeactiveTodoItem}>Done</button> :
+                <button data-testid='done-button' onClick={onDeactiveTodoItem}>Done</button> :
                 <abbr title={moment(timeOfDeactive).fromNow()}>
                     <button disabled={true}>Already Done</button>
                 </abbr>
             }
-            <button onClick={onRemoveTodoItem}>X</button>
+            <button data-testid='x-button' onClick={onRemoveTodoItem}>X</button>
         </div>
     )
 }

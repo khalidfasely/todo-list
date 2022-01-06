@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Header component correctly 1`] = `
+<DocumentFragment>
+  <header
+    class="App-header"
+  >
+    Todo List
+    <button
+      class="button"
+      data-testid="logout-button"
+    >
+      Logout
+    </button>
+  </header>
+</DocumentFragment>
+`;

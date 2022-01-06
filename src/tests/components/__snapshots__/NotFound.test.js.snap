@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render NotFound component correctly 1`] = `
+<DocumentFragment>
+  <div>
+    404 - Not Found 
+    <a>
+      Go home.
+    </a>
+  </div>
+</DocumentFragment>
+`;

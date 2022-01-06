@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render LoginPage component correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="box-layout"
+  >
+    <div
+      class="box-layout__box"
+    >
+      <h1
+        class="box-layout__title"
+      >
+        Todo List
+      </h1>
+      <p>
+        it's time to get your life under control.
+      </p>
+      <button
+        class="button"
+        data-testid="login-button"
+      >
+        Login with Google
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;

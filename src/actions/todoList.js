@@ -13,7 +13,7 @@ export const startAddTodoItem = (todoItemData = {}) => {
         const {
             content = '',
             active = false,
-            time = moment(),
+            time = moment(0).toString(),
             timeOfDeactive = 0
         } = todoItemData;
         const todoItem = { content, active, time, timeOfDeactive };

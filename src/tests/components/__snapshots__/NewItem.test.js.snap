@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render NewItem component correctly 1`] = `
+<DocumentFragment>
+  <div>
+    <form
+      data-testid="form"
+    >
+      <input
+        data-testid="input"
+        placeholder="Add Something To do later!"
+        type="text"
+        value=""
+      />
+    </form>
+  </div>
+</DocumentFragment>
+`;

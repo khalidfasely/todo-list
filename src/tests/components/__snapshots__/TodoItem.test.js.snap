@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render TodoItem component correctly with active item 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      todo1
+    </div>
+    <div>
+      52 years ago
+    </div>
+    <button
+      data-testid="done-button"
+    >
+      Done
+    </button>
+    <button
+      data-testid="x-button"
+    >
+      X
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`Should render TodoItem component correctly with unactive item 1`] = `
+<DocumentFragment>
+  <div>
+    <div>
+      todo3
+    </div>
+    <div>
+      52 years ago
+    </div>
+    <abbr
+      title="52 years ago"
+    >
+      <button
+        disabled=""
+      >
+        Already Done
+      </button>
+    </abbr>
+    <button
+      data-testid="x-button"
+    >
+      X
+    </button>
+  </div>
+</DocumentFragment>
+`;
