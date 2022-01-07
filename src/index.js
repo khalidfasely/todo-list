@@ -3,10 +3,12 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import AppRouter, { history } from './router/AppRouter';
 import reportWebVitals from './reportWebVitals';
+import Loader from './components/Loader';
 import configeStore from './store/configureStore';
 import { firebase } from './firebase/firebase';
 import { login, logout } from './actions/auth';
 import { startSetTodoList } from './actions/todoList';
+import './styles/styles.scss';
 
 const store = configeStore();
 
@@ -35,7 +37,7 @@ const renderApp = () => {
   };
 };
 
-ReactDOM.render(<div>Loading...</div>, document.getElementById('root'));
+ReactDOM.render(<Loader />, document.getElementById('root'));
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {

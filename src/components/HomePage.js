@@ -4,10 +4,16 @@ import TodoList from "./TodoList";
 
 const HomePage = () => {
     return (
-        <div>
-            <Header />
-            <NewItem />
-            <TodoList />
+        <div className="app">
+            <div>
+                <Header />
+                <div className="sections-container">
+                    <div className="content-container">
+                        <NewItem />
+                        <TodoList />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 };

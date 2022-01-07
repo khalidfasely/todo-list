@@ -1,0 +1,12 @@
+.list-container {
+    margin: 2rem 0;
+    border-top: 1px solid $grey;
+    color: $off-white;
+}
+
+.list-empty {
+    color: darken($off-white, 10%);
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}

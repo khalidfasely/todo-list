@@ -3,9 +3,19 @@ import { startLogout } from "../actions/auth";
 
 export const Header = ({ startLogout }) => {
     return (
-        <header className="App-header">
-            Todo List
-            <button data-testid='logout-button' className="button" onClick={startLogout}>Logout</button>
+        <header className="header">
+            <div className="header__logout-button-container">
+                <button
+                    className="header__logout-button"
+                    data-testid='logout-button'
+                    onClick={startLogout}
+                >
+                    Logout
+                </button>
+            </div>
+            <h1 className="header__title">
+                Todo List
+            </h1>
         </header>
     );
 };

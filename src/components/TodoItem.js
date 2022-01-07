@@ -21,17 +21,23 @@ export const TodoItem = ({
     };
 
     return (
-        <div>
-            <div>{content}</div>
-            <div>{moment(time).fromNow()}</div>
-            {
-                active ?
-                <button data-testid='done-button' onClick={onDeactiveTodoItem}>Done</button> :
-                <abbr title={moment(timeOfDeactive).fromNow()}>
-                    <button disabled={true}>Already Done</button>
+        <div className="item-container">
+            <h4 className="item__content">{content}</h4>
+            <div className="item__right">
+                <div className="item__time">{moment(time).fromNow()}</div>
+                {
+                    active ?
+                    <abbr title="Already done?">
+                        <button className="item__button deactive" data-testid='done-button' onClick={onDeactiveTodoItem}>&#x2713;</button>
+                    </abbr> :
+                    <abbr title={`Done ${moment(timeOfDeactive).fromNow()}`}>
+                        <button className="item__button deactivated" disabled={true}>&#x2713;</button>
+                    </abbr>
+                }
+                <abbr title="Remove From List">
+                    <button className="item__button remove" data-testid='x-button' onClick={onRemoveTodoItem}>X</button>
                 </abbr>
-            }
-            <button data-testid='x-button' onClick={onRemoveTodoItem}>X</button>
+            </div>
         </div>
     )
 }

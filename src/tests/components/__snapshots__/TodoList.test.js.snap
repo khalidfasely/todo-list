@@ -2,7 +2,9 @@
 
 exports[`Should render TodoList component correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="list-container"
+  >
     <div>
       Todo Item Component
     </div>
@@ -18,9 +20,13 @@ exports[`Should render TodoList component correctly 1`] = `
 
 exports[`Should render TodoList component correctly with empty list 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
-      Nothing ToDo
+  <div
+    class="list-container"
+  >
+    <div
+      class="list-empty"
+    >
+      Nothing Todo
     </div>
   </div>
 </DocumentFragment>

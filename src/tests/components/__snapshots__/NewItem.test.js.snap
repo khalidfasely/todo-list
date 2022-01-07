@@ -2,16 +2,29 @@
 
 exports[`Should render NewItem component correctly 1`] = `
 <DocumentFragment>
-  <div>
+  <div
+    class="form-container"
+  >
     <form
+      class="form"
       data-testid="form"
     >
-      <input
-        data-testid="input"
-        placeholder="Add Something To do later!"
-        type="text"
-        value=""
-      />
+      <div>
+        <input
+          data-testid="input"
+          maxlength="50"
+          placeholder="Add Something To do later!"
+          type="text"
+          value=""
+        />
+        <abbr
+          title="Add Task ToDo"
+        >
+          <button>
+            +
+          </button>
+        </abbr>
+      </div>
     </form>
   </div>
 </DocumentFragment>

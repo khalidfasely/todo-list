@@ -3,11 +3,11 @@ import TodoItem from './TodoItem';
 
 export const TodoList = ({ todoList = [] }) => {
     return (
-        <div>
+        <div className='list-container'>
             {
                 todoList.length !== 0 ?
                 todoList.map(todoItem => <TodoItem  key={todoItem.id} {...todoItem} />) :
-                <div>Nothing ToDo</div>
+                <div className='list-empty'>Nothing Todo</div>
             }
         </div>
     );

@@ -1,0 +1,36 @@
+.header {
+    //text-align: center;
+    //display: flex;
+    //justify-content: center;
+    align-items: center;
+    background-color: $main-color;
+    min-height: 15rem;
+}
+
+.header__logout-button-container {
+    text-align: end;
+}
+
+.header__logout-button {
+    background: $second-color;
+    border: none;
+    margin: 1rem;
+    padding: .3rem .8rem;
+    color: $off-white;
+}
+
+.header__title {
+    font-size: 4rem;
+    color: $off-white;
+    margin: 0 20%;
+
+    @media (max-width: 850px) {
+        margin: 0 15%;
+        font-size: 3.4rem;
+    }
+
+    @media (max-width: $desktop-breakpoint) {
+        margin: 0 5%;
+        font-size: 3rem;
+    }
+}

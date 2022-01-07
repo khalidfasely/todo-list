@@ -21,7 +21,7 @@ export const NewItem = ({ startAddTodoItem }) => {
             time: moment().format(),
             timeOfDeactive: undefined
         };
-        if(newItem) {
+        if(newItem.replace(/\s/g, '')) {
             startAddTodoItem(newTodoItem);
             setNewItem('');
         } else {
@@ -38,16 +38,22 @@ export const NewItem = ({ startAddTodoItem }) => {
     //};
 
     return (
-        <div>
-            <form data-testid='form' onSubmit={onAddItemToList}>
-                {error && <p>{error}</p>}
-                <input
-                    data-testid='input'
-                    placeholder="Add Something To do later!"
-                    type='text'
-                    value={newItem}
-                    onChange={onNewItemChange}
-                />
+        <div className='form-container'>
+            <form className='form' data-testid='form' onSubmit={onAddItemToList}>
+                <div>
+                    <input
+                        data-testid='input'
+                        placeholder="Add Something To do later!"
+                        type='text'
+                        maxLength={50}
+                        value={newItem}
+                        onChange={onNewItemChange}
+                    />
+                    <abbr title='Add Task ToDo'>
+                        <button>+</button>
+                    </abbr>
+                </div>
+                {error && <i className='form__error'>{error}</i>}
             </form>
         </div>
     );

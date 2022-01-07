@@ -1,0 +1,78 @@
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    background: $main-color;
+    padding: .7rem .5rem;
+    margin-top: 1rem;
+    border-radius: .3rem;
+
+    cursor: pointer;
+
+    &:hover {
+        .item__content {
+            padding-left: .5rem;
+        }
+    }
+
+    @media (max-width: $desktop-breakpoint) {
+        display: block;
+    }
+}
+
+.item__content {
+    word-break: break-all;
+    font-size: 1.4rem;
+    align-items: center;
+    display: flex;
+    font-weight: 500;
+    transition: all .3s ease 0s;
+}
+
+.item__right {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $desktop-breakpoint) {
+        justify-content: right;
+    }
+}
+
+.item__time {
+    font-size: 1rem;
+    color: lighten($grey, 20%);
+}
+
+.item__button {
+    background: none;
+    border: none;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    margin-left: .5rem;
+    font-size: 1.6rem;
+    align-items: center;
+    color: $off-white;
+}
+
+.item__button.deactive {
+    color: $green;
+    transition: all .3s ease 0s;
+
+    &:hover {
+        background: rgba(0, 128, 0, .4);
+    }
+}
+
+.item__button.remove {
+    color: $red;
+    transition: all .3s ease 0s;
+
+    &:hover {
+        background: rgba(178, 34, 34, .4);
+    }
+}
+
+.item__button.deactivated {
+    cursor: pointer;
+    color: lighten($grey, 10%);
+}

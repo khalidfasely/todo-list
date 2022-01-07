@@ -2,50 +2,86 @@
 
 exports[`Should render TodoItem component correctly with active item 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
+  <div
+    class="item-container"
+  >
+    <h4
+      class="item__content"
+    >
       todo1
-    </div>
-    <div>
-      52 years ago
-    </div>
-    <button
-      data-testid="done-button"
+    </h4>
+    <div
+      class="item__right"
     >
-      Done
-    </button>
-    <button
-      data-testid="x-button"
-    >
-      X
-    </button>
+      <div
+        class="item__time"
+      >
+        52 years ago
+      </div>
+      <abbr
+        title="Already done?"
+      >
+        <button
+          class="item__button deactive"
+          data-testid="done-button"
+        >
+          ✓
+        </button>
+      </abbr>
+      <abbr
+        title="Remove From List"
+      >
+        <button
+          class="item__button remove"
+          data-testid="x-button"
+        >
+          X
+        </button>
+      </abbr>
+    </div>
   </div>
 </DocumentFragment>
 `;
 
 exports[`Should render TodoItem component correctly with unactive item 1`] = `
 <DocumentFragment>
-  <div>
-    <div>
+  <div
+    class="item-container"
+  >
+    <h4
+      class="item__content"
+    >
       todo3
-    </div>
-    <div>
-      52 years ago
-    </div>
-    <abbr
-      title="52 years ago"
+    </h4>
+    <div
+      class="item__right"
     >
-      <button
-        disabled=""
+      <div
+        class="item__time"
       >
-        Already Done
-      </button>
-    </abbr>
-    <button
-      data-testid="x-button"
-    >
-      X
-    </button>
+        52 years ago
+      </div>
+      <abbr
+        title="Done 52 years ago"
+      >
+        <button
+          class="item__button deactivated"
+          disabled=""
+        >
+          ✓
+        </button>
+      </abbr>
+      <abbr
+        title="Remove From List"
+      >
+        <button
+          class="item__button remove"
+          data-testid="x-button"
+        >
+          X
+        </button>
+      </abbr>
+    </div>
   </div>
 </DocumentFragment>
 `;

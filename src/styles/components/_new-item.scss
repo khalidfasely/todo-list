@@ -1,0 +1,48 @@
+.form input {
+    background-color: lighten($main-color, 25%);
+    width: 100%;
+    margin: 1rem;
+    border: none;
+    padding: 1rem;
+    color: $off-white;
+
+    /*&:focus {
+        
+    }*/
+}
+
+.form button {
+    //width: 5rem;
+    //height: 2rem;
+    width: 3rem;
+    height: 3rem;
+    font-size: xx-large;
+    //font-weight: 600;
+    background: none;
+    border-radius: 50%;
+    border: none;
+    color: lighten($main-color, 50%);
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+        color: $off-white;
+    }
+}
+
+.form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__error {
+    color: lighten($red, 15%);
+    font-size: 1.3rem;
+    padding: 0 1rem;
+    /*transition: all 1s ease-in 0s;*/
+}
+
+/*.form-container {
+    position: absolute;
+    top: 13rem;
+}*/

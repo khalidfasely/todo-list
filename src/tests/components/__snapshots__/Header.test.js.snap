@@ -3,15 +3,23 @@
 exports[`Should render Header component correctly 1`] = `
 <DocumentFragment>
   <header
-    class="App-header"
+    class="header"
   >
-    Todo List
-    <button
-      class="button"
-      data-testid="logout-button"
+    <div
+      class="header__logout-button-container"
     >
-      Logout
-    </button>
+      <button
+        class="header__logout-button"
+        data-testid="logout-button"
+      >
+        Logout
+      </button>
+    </div>
+    <h1
+      class="header__title"
+    >
+      Todo List
+    </h1>
   </header>
 </DocumentFragment>
 `;
