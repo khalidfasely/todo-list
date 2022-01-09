@@ -12,7 +12,7 @@ exports[`Should render NewItem component correctly 1`] = `
       <div>
         <input
           data-testid="input"
-          maxlength="50"
+          maxlength="75"
           placeholder="Add Something To do later!"
           type="text"
           value=""

@@ -45,7 +45,7 @@ export const NewItem = ({ startAddTodoItem }) => {
                         data-testid='input'
                         placeholder="Add Something To do later!"
                         type='text'
-                        maxLength={50}
+                        maxLength={75}
                         value={newItem}
                         onChange={onNewItemChange}
                     />
