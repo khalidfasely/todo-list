@@ -5,7 +5,7 @@ import { startLogin } from '../actions/auth';
 export const Login = ({ startLogin }) => (
     <div className="box-layout">
         <div className="box-layout__box">
-            <h1 className="box-layout__title">Todo List</h1>
+            <h1 className="box-layout__title">Task Tracker</h1>
             <p>it's time to get your life under control.</p>
             <button data-testid='login-button' className="button" onClick={startLogin}>Login with Google</button>
         </div>

@@ -14,7 +14,7 @@ export const Header = ({ startLogout }) => {
                 </button>
             </div>
             <h1 className="header__title">
-                Todo List
+                Task Tracker
             </h1>
         </header>
     );
