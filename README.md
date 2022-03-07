@@ -38,7 +38,6 @@ In the src/ folder, we first see:
 - Copy the repository to your system.
 - Make sure you have NodeJs installed on your system. If not you will need to install it.
 - Install yarn on your machine.
-- Go to the project folder
 - and run these commands:
 ```shell
 yarn install
