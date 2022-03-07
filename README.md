@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+# Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is built for myself, as I was need a todo-list/task-tracker app to track my day tasks.
 
-## Available Scripts
+To build this App I used React, Firebase and Sass.
 
-In the project directory, you can run:
+# Routes
+## Login: /
+User can log into the web app with google account.
 
-### `npm start`
+## Index: /home
+This page is the home page, display all your tasks and a form to add a task, you can remove a task or mark it as it's already done.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# What’s contained in each file I created.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## src/ folder:
+In the src/ folder, we first see:
+- The __ mocks __/ folder that containes all the modules that needs to be mocked for tests purpose.
+- The actions/ folder that containes files like auth.js todoList.js, with actions for the Redux Store, in these files we communicate with firebase.
+- The components/ folder that containes all components that renders the app, every component is response for a part of the app(Header component response for the header in the app...).
+- The reducers/ folder containes files, every file contain a Redux reducer.
+- The router/ folder containes 3 files:
+    - AppRouter.js: as the root of the app and specified every component with his URL.
+    - PriveteRoute.js and PublicRoute.js: check if some user have the access to some page, if yes render the page, if no redirect the User to an available page.
+- The store/ folder containes a configureStore.js file that combine all the Redux reducers.
+- The styles/ containes:
+    - base/: That contains some base styling.
+    - components/: That containes styles files, every file contains styles for a specific component.
+    - styles.scss: That imports all the styles files, and this file is the one imported on the root of the app(index.js file).
+- The tests/ folder that containes all actions/, components/, reducers/ folders tests, and the fictures/ folder it's a fake data to tests some files that needs it.
 
-### `npm test`
+# How to run the application
+<!--#First you must have Python and Django and NodeJs installed in your machine
+#- Then you need to go to the front-end folder(blog-f-e/) and run npm install to create node_modules/ folder.
+#- Then back on the root of the app run python manage.py runserver.-->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Copy the repository to your system.
+- Make sure you have NodeJs installed on your system. If not you will need to install it.
+- Install yarn on your machine.
+- Go to the project folder
+- and run these commands:
+```shell
+yarn install
+```
+```shell
+yarn run build
+```
 
-### `npm run build`
+Then run 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+yarn start
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Then login with google and to create new task, remove a task ...
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> You can also visit the app on the internet https://lek-tasks-tracker.herokuapp.com/
