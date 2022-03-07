@@ -18,6 +18,7 @@ In the src/ folder, we first see:
 - The __ mocks __/ folder that containes all the modules that needs to be mocked for tests purpose.
 - The actions/ folder that containes files like auth.js todoList.js, with actions for the Redux Store, in these files we communicate with firebase.
 - The components/ folder that containes all components that renders the app, every component is response for a part of the app(Header component response for the header in the app...).
+- The firebase/ folder containes a single file to configure firebase with our app.
 - The reducers/ folder containes files, every file contain a Redux reducer.
 - The router/ folder containes 3 files:
     - AppRouter.js: as the root of the app and specified every component with his URL.
