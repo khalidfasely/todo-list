@@ -10,7 +10,8 @@
 
     &:hover {
         .item__content {
-            padding-left: .5rem;
+            //padding-left: .5rem;
+            transform: translateX(.5rem);
         }
     }
 
