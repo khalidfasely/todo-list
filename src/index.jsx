@@ -1,3 +1,6 @@
+//global.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
+//global.WebSocket = require('ws');
+//global.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
