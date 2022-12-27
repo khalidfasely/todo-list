@@ -1,9 +1,7 @@
-import * as firebase from 'firebase';
-//import { initializeApp } from 'firebase/app';
-//import firebase from 'firebase';
-//import { database } from 'firebase/firestore/database';
-//import { auth } from 'firebase/firestore/auth';
-//var firebase = require("firebase");
+import { initializeApp } from 'firebase/app';
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 
 const firebaseConfig = {
   apiKey:`${import.meta.env.VITE_FIREBASE_API_KEY}`,
@@ -16,22 +14,10 @@ const firebaseConfig = {
   measurementId:`${import.meta.env.VITE_FIREBASE_MEASUREMENT_ID}`
 };
 
-firebase.initializeApp(firebaseConfig);
+const firebase = initializeApp(firebaseConfig);
 
-const database = firebase.database();
-const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+const auth = getAuth(firebase);
+const database = getFirestore(firebase);
+const googleAuthProvider = new GoogleAuthProvider();
 
-export { firebase, googleAuthProvider, database as default };
-
-//database.ref().set({
-//  users: {
-//    uid: {
-//      iid: {
-//        content: 'firebase',
-//        time: 'today',
-//        active: true,
-//        timeOfDeactive: null
-//      }
-//    }
-//  }
-//});
+export { firebase, googleAuthProvider, auth, database as default };

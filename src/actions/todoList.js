@@ -1,5 +1,5 @@
+import { getDatabase, ref, push, remove, update, get, child } from "firebase/database";
 import moment from 'moment';
-import database from '../firebase/firebase';
 
 // Add Todo Item
 export const addTodoItem = (todoItem) => ({
@@ -18,7 +18,7 @@ export const startAddTodoItem = (todoItemData = {}) => {
         } = todoItemData;
         const todoItem = { content, active, time, timeOfDeactive };
 
-        return database.ref(`users/${uid}/list`).push(todoItem).then((ref) => {
+        return push(ref(getDatabase(), `users/${uid}/list`), todoItem).then((ref) => {
             dispatch(addTodoItem({
                 id: ref.key,
                 ...todoItem
@@ -42,7 +42,7 @@ export const startDeactiveTodoItem = (id) => {
             timeOfDeactive: moment().format()
         };
 
-        return database.ref(`users/${uid}/list/${id}`).update(updates).then(() => {
+        return update(ref(getDatabase(), `users/${uid}/list/${id}`), updates).then(() => {
             dispatch(deactiveTodoItem(id, updates));
         });
     };
@@ -57,8 +57,8 @@ export const removeTodoItem = (id) => ({
 export const startRemoveTodoItem = (id) => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        
-        return database.ref(`users/${uid}/list/${id}`).remove().then(() => {
+
+        return remove(ref(getDatabase(), `users/${uid}/list/${id}`)).then(() => {
             dispatch(removeTodoItem(id));
         });
     };
@@ -73,15 +73,16 @@ export const setTodoList = (todoList) => ({
 export const startSetTodoList = () => {
     return (dispatch, getState) => {
         const uid = getState().auth.uid;
-        return database.ref(`users/${uid}/list`)
-            .once('value')
+
+        const dbRef = ref(getDatabase());
+        return get(child(dbRef, `users/${uid}/list`))
             .then((snapshot) => {
                 const todoListData = [];
 
                 snapshot.forEach((childSnapshot) => {
                     todoListData.push({
-                      id: childSnapshot.key,
-                      ...childSnapshot.val()
+                    id: childSnapshot.key,
+                    ...childSnapshot.val()
                     });
                 });
                 dispatch(setTodoList(todoListData));

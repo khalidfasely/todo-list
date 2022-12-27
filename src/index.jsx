@@ -8,7 +8,7 @@ import AppRouter, { history } from './router/AppRouter';
 import reportWebVitals from './reportWebVitals';
 import Loader from './components/Loader';
 import configeStore from './store/configureStore';
-import { firebase } from './firebase/firebase';
+import { auth } from './firebase/firebase';
 import { login, logout } from './actions/auth';
 import { startSetTodoList } from './actions/todoList';
 import './styles/styles.scss';
@@ -42,7 +42,7 @@ const renderApp = () => {
 
 ReactDOM.render(<Loader />, document.getElementById('root'));
 
-firebase.auth().onAuthStateChanged((user) => {
+auth.onAuthStateChanged((user) => {
   if (user) {
       store.dispatch(login(user.uid));
       //console.log('uid', user.uid);
